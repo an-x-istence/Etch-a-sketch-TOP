@@ -4,9 +4,12 @@ let etchContainer = document.querySelector(".container");
 
 
 function gridGenerator(size) {
+    //Dynamically set container width by multiplying number of boxes in a row by the total width each box takes (Set to 50px in css)
     let containerWidth = size * 50;
     
     etchContainer.style.width = `${containerWidth}px`
+    //Check how to generate random numbers, use backticks to get the 3 random nubers for rgb into the js
+    // Unsure about opacity
 
     for (i = 0; i < size ** 2; i++) {
         let etchSquare = document.createElement("div");
@@ -16,10 +19,11 @@ function gridGenerator(size) {
     }
 }
 
-function gridRemover() {gridRemover();
+function gridRemover() {
     document.querySelectorAll('.etch-square').forEach(e => e.remove());
 }
 
+// Welcome the user with a default 16 x 16 grid
 gridGenerator(defaultGrid);
 
 userGridChanger.addEventListener("click", () => {
