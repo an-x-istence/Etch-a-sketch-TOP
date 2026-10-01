@@ -2,18 +2,20 @@ let defaultGrid = 16;
 let userGridChanger = document.querySelector(".change-grid");
 let etchContainer = document.querySelector(".container");
 
+function randomColorValue () {
+    return Math.floor(Math.random() * 255) + 1
+}
 
 function gridGenerator(size) {
     //Dynamically set container width by multiplying number of boxes in a row by the total width each box takes (Set to 50px in css)
     let containerWidth = size * 50;
     
     etchContainer.style.width = `${containerWidth}px`
-    //Check how to generate random numbers, use backticks to get the 3 random nubers for rgb into the js
-    // Unsure about opacity
+
 
     for (i = 0; i < size ** 2; i++) {
         let etchSquare = document.createElement("div");
-        etchSquare.addEventListener("mouseover", () => etchSquare.style.backgroundColor = "green")
+        etchSquare.addEventListener("mouseover", () => etchSquare.style.backgroundColor = `rgb(${randomColorValue()}, ${randomColorValue()}, ${randomColorValue()})`)
         etchSquare.classList.toggle("etch-square")
         etchContainer.appendChild(etchSquare)
     }
