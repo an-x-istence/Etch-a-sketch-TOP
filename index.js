@@ -10,21 +10,6 @@ function randomColorValue () {
 }
 
 
-function opacityChanger () {
-    if (hoverCount == 0) {
-        opacity = 0.1;
-        hoverCount++
-        return opacity;
-    }
-    else if (0 < hoverCount < 10) {
-        opacity += 0.1;
-        hoverCount++;
-        return opacity;
-    } else {
-        return opacity;
-    }
-}
-
 function gridGenerator(size) {
     //Dynamically set container width by multiplying number of boxes in a row by the total width each box takes (Set to 50px in css)
     let containerWidth = size * 50;
