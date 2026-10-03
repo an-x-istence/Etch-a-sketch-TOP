@@ -26,10 +26,10 @@ function gridGenerator(size) {
         etchContainer.appendChild(etchSquare)
     }
 
-    opacityUncreaser();
+    opacityIncreaser();
 }
 
-function opacityUncreaser () {
+function opacityIncreaser () {
     document.querySelectorAll(".etch-square").forEach((e) => {
         e.addEventListener("mouseover", () => {
             let squareColor = getComputedStyle(e).getPropertyValue("background-color");
